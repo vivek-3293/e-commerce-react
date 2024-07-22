@@ -1,0 +1,171 @@
+
+/* Custom Scrollbar */
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+  background: var(--yellow);
+}
+
+/* Header CSS */
+header {
+  position: absolute;
+  width: 100%;
+  background: #000;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+header .logo img {
+  width: auto;
+  max-width: inherit;
+  max-height: 80px;
+}
+header a {
+  display: inline-flex;
+  justify-content: center;
+  color: var(--white);
+  padding: 0 1rem !important;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-family: var(--oswald-font);
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: all 15ms ease-in-out;
+  -moz-transition: all 15ms ease-in-out;
+  -o-transition: all 15ms ease-in-out;
+  -ms-transition: all 15ms ease-in-out;
+  transition: all 15ms ease-in-out;
+}
+
+header .sticky a {
+  color: var(--light-black);
+}
+header a:hover {
+  color: var(--yellow);
+}
+
+.head-login-btn, .head-logout-btn {
+  width: 100px;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+  border: none;
+  background-color: rgba(7, 235, 75, 0.932);
+  /* margin-left: 15px; */
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.75rem;
+}
+.head-logout-btn{  
+  background-color: rgba(243, 7, 26, 0.932);  
+}
+.head-login-btn:hover, .head-logout-btn:hover{
+  background-color: var(--yellow);
+}
+
+/* <!-------------------------- Main Page ---------------------------> */
+
+.main {
+  padding-top: 150px;
+}
+.mainText h1, .mainText h2, .mainText p {
+  padding-top: 40px;
+}
+.mainText h1 {
+  font-size: 50px;
+  color: rgb(3, 168, 168);
+}
+.mainText h2 {
+  font-size: 33px;
+}
+.main-btn {
+  width: 115px;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+  border: none;
+  background-color: rgb(3, 123, 123);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.main-btn:hover {
+  border: 2px solid rgb(3, 163, 163);
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+}
+
+/* Media Query CSS */
+
+@media (max-width: 992px) {
+  header .navbar {
+    background-color: var(--white);
+  }
+  header .navbar-toggler {
+    bottom: none;
+  }
+  header .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  header .navbar-toggler-icon {
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+  }
+  header a {
+    color: var(--light-black);
+    padding: 5px !important;
+    color: white;
+  }
+  header .bg-992 {
+    background-color: black !important;
+  }
+
+  button.navbar-toggler .collapsed{
+    width: 0px !important;
+  }  
+}
+
+/* Header Main Page Media Query */
+@media (max-width: 768px) {
+  .main {
+    padding-top: 100px;
+  }
+
+  .mainText h1 {
+    font-size: 40px;
+  }
+
+  .mainText h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main {
+    padding-top: 70px;
+  }
+
+  .mainText h1 {
+    font-size: 30px;
+  }
+
+  .mainText h2 {
+    font-size: 24px;
+    padding-top: 60px;
+  }
+
+  .main-btn {
+    width: 100px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+

@@ -33,7 +33,7 @@ const Blog = () => {
       <div className="blog-head text-center">
         <h1>Read <span>Blog's</span></h1>
       </div>
-      <div className="blog">
+      <div className="blog pb-5">
         {blogs.map((blog, index) => (
           <div className="blogCard" key={index}>
             <img src={blog.img} alt={`Blog ${index + 1}`} />

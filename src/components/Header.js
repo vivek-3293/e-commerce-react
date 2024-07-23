@@ -27,7 +27,6 @@ function Header() {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json'
         },
       })
         .then((res) => res.json())

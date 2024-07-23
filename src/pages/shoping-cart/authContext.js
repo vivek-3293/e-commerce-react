@@ -20,31 +20,3 @@ export const AuthProvider = ({ children }) => {
   );
 };
 export const useAuth = () => useContext(AuthContext);
-
-
-
-
-
-
-
-
-// import React, { createContext, useState, useContext } from 'react';
-
-// // Create a context
-// const AuthContext = createContext();
-
-// // Create a provider component
-// export const AuthProvider = ({ children }) => {
-//   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-//   // Here you would normally fetch the authentication state from your backend
-
-//   return (
-//     <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// };
-
-// // Custom hook to use the AuthContext
-// export const useAuth = () => useContext(AuthContext);

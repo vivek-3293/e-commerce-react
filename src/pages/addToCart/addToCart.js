@@ -28,12 +28,14 @@ const Cart = () => {
                       alt={product.title}
                     />
                   </div>
-                  <div>Title : {product.title}</div>
-                  <div>Price : {product.price}</div>
-                  <div>Quantity: {product.quantity}</div>
-                  <div>Total : {product.total}</div>
-                  <div>Dis% : {product.discountPercentage}</div>
-                  <div>DisTotal : {product.discountedTotal}</div>
+                  <div className="pt-4">
+                    <div>Title : {product.title}</div>
+                    <div>Price : {product.price}</div>
+                    <div>Quantity: {product.quantity}</div>
+                    <div>Total : {product.total}</div>
+                    <div>Dis% : {product.discountPercentage}</div>
+                    <div>DisTotal : {product.discountedTotal}</div>
+                  </div>
                 </div>
               ))}
             </div>

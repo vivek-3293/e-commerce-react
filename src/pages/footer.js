@@ -39,13 +39,12 @@ function Footer() {
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quo
-              laboriosam animi ullam harum illo excepturi exercitationem ea quae
-              accusantium.
+              laboriosam.
             </p>
           </div>
 
-          <div className="footer-detail w-75 d-flex justify-content-between">
-            <div className="footer-explore">
+          <div className="footer-detail w-75 d-flex justify-content-around">
+            <div className="footer-explore text-center">
               <h2>Explore</h2>
               <p>All</p>
               <p>Rated</p>
@@ -53,7 +52,7 @@ function Footer() {
               <p>Tips</p>
               <p>Guide</p>
             </div>
-            <div className="footer-connect">
+            <div className="footer-connect text-center">
               <h2>Connect</h2>
               <p>YouTube</p>
               <p>Instagram</p>
@@ -61,7 +60,7 @@ function Footer() {
               <p>Facebook</p>
               <p>Pinterest</p>
             </div>
-            <div className="footer-nitty-gritty">
+            <div className="footer-nitty-gritty text-center">
               <h2>Nitty Gritty</h2>
               <p>Terms & Conditions</p>
               <p>Privacy Policy</p>
@@ -83,4 +82,3 @@ function Footer() {
 }
 
 export default Footer;
-

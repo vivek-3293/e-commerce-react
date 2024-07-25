@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container,Row, Col, Nav, Navbar, Button } from "react-bootstrap";
+import { Container, Row, Col, Nav, Navbar, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import HeadLogo from "../images/headerlogo/shopee-logo-white.webp";
 import HeadBanner from "../images/headerbanner/banner.png";
 import "../styles/headerstyle.css";
+import { useAuth } from "../pages/shoping-cart/authContext";
 
 function Header() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
+  const { user, isAuthenticated , logout } = useAuth();
 
   // ========= Custom Scrollbar ==========
   const changeValueOnScroll = () => {
@@ -19,36 +20,9 @@ function Header() {
 
   window.addEventListener("scroll", changeValueOnScroll);
 
-  // ======== Auth Token =========
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      fetch("https://dummyjson.com/auth/me", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data && !data.error) {
-            setIsAuthenticated(true);
-          } else {
-            setIsAuthenticated(false);
-          }
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          setIsAuthenticated(false);
-        });
-    }
-  }, []);
-
-  // ========== Logout Button ==========
   const handleLogoutClick = () => {
-    localStorage.removeItem("token");
-    setIsAuthenticated(false);
-    navigate("/login");
+    logout();
+    navigate("/");
   };
 
   return (
@@ -74,10 +48,14 @@ function Header() {
                 <Link to="/product">Product</Link>
                 <Link to="/blog">Blog</Link>
                 <Link to="/contact">Contact</Link>
-                <div>
+
+                {isAuthenticated && (
+                  <h2 className="user-name"> {user.username}</h2>
+                )}
+                <div className="pt-small">
                   {!isAuthenticated ? (
                     <Link to="/login">
-                      <button className="head-login-btn">Login</button>
+                      <button className="head-login-btn">Login</button>                      
                     </Link>
                   ) : (
                     <button
@@ -93,7 +71,6 @@ function Header() {
           </Container>
         </Navbar>
       </header>
-      
 
       {/* <!=========== Main Page ============> */}
 
@@ -117,3 +94,6 @@ function Header() {
 }
 
 export default Header;
+
+
+

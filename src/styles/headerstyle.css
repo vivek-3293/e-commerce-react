@@ -49,23 +49,28 @@ header a:hover {
 }
 
 .head-login-btn, .head-logout-btn {
-  width: 100px;
-  height: 50px;
+  width: 90px;
+  height: 45px;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   background-color: rgba(7, 235, 75, 0.932);
-  /* margin-left: 15px; */
+  margin-left: 15px;
   text-transform: uppercase;
   border-radius: 4px;
   cursor: pointer;
-  padding: 0.75rem;
+  /* padding: 0.75rem; */
 }
 .head-logout-btn{  
   background-color: rgba(243, 7, 26, 0.932);  
 }
 .head-login-btn:hover, .head-logout-btn:hover{
   background-color: var(--yellow);
+}
+.user-name{
+  color: green;
+  font-size: 22px;
+  margin-bottom: 0px;
 }
 
 /* <!-------------------------- Main Page ---------------------------> */
@@ -148,6 +153,9 @@ header a:hover {
 }
 
 @media (max-width: 576px) {
+  .pt-small{
+    padding: 10px 0px !important;
+  }
   .main {
     padding-top: 70px;
   }

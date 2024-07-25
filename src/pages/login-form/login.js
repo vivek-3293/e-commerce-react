@@ -12,7 +12,6 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
-  
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -85,8 +84,7 @@ const Login = () => {
         </div>
         <div className="d-flex justify-content-center">
           <button type="submit" className="w-50 btn btn-success mt-3" disabled={loading}>
-          {loading ? "Logging in..." : "Login"}
-            Login
+          {loading ? "Logging in..." : "Login"}            
           </button>
         </div>
       </form>

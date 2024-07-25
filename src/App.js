@@ -3,18 +3,19 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  
 } from "react-router-dom";
 import Home from "./home";
 import Products from "./pages/products";
 import ProductDetail from "./components/ProductDetail";
-import React from "react";
+import React, {} from "react";
 import { AuthProvider } from "./pages/shoping-cart/authContext";
 import Shoping from "./pages/shoping-cart/shoping";
 import Login from "./pages/login-form/login";
-import { CartProvider } from "./pages/addToCart/cartContext";
+import { CartProvider } from "./pages/Cart/cartContext";
 import CustomerReview from "./pages/review";
 import Blog from "./pages/blog";
-import Cart from "./pages/addToCart/addToCart";
+import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/contact/contact";
 
 function App() {
@@ -45,3 +46,5 @@ function App() {
 }
 
 export default App;
+
+

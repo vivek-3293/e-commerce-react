@@ -3,7 +3,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState({ username: '', password: '' });
+  const [user, setUser] = useState();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
         })
         .then((data) => {
           if (data && !data.error) {
-            setUser({ username: data.username, password: data.password });
+            setUser(data);
             setIsAuthenticated(true);
           } else {
             setIsAuthenticated(false);
@@ -36,13 +36,13 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const login = (username, password) => {
-    setUser({ username, password });
+  const login = (data) => {
+    setUser(data);
     setIsAuthenticated(true);
   };
 
   const logout = () => {
-    setUser({ username: '', password: '' });
+    setUser(null);
     setIsAuthenticated(false);
     localStorage.removeItem('token');
   };

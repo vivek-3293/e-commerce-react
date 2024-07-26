@@ -9,7 +9,7 @@ const Login = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { login, isAuthenticated } = useAuth();
+  const {login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {

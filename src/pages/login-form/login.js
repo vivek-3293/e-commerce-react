@@ -1,6 +1,6 @@
 // username : emilys  password : emilyspass
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../login-form/login.css";
 import { useAuth } from "../shoping-cart/authContext";
@@ -10,8 +10,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
+  const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/");
+    }
+    }, [isAuthenticated, navigate]);  
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -23,20 +29,15 @@ const Login = () => {
     setLoading(true);
     try {
       const response = await fetch("https://dummyjson.com/auth/login", {
-        
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, password }),
-        
       });
-      console.log(response);
-      
 
       const data = await response.json();
       setLoading(false);
-      console.log('response',data)
 
       if (data.token) {
         localStorage.setItem('token', data.token);  
@@ -50,6 +51,7 @@ const Login = () => {
       setError(error.message || "An error occurred");
     }
   };
+  
 
   return (
     <div className="container d-flex flex-column align-items-center my-5" id="contact">
@@ -84,15 +86,18 @@ const Login = () => {
         </div>
         <div className="d-flex justify-content-center">
           <button type="submit" className="w-50 btn btn-success mt-3" disabled={loading}>
-          {loading ? "Logging in..." : "Login"}            
+            {loading ? "Logging in..." : "Login"}
           </button>
         </div>
       </form>
     </div>
   );
+
 };
 
+
 export default Login;
+
 
 // username : emilys  password : emilyspass
 

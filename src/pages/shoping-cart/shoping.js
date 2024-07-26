@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ShimmerSimpleGallery } from "react-shimmer-effects";
+import { useAuth } from "../shoping-cart/authContext";
 
 function Shoping() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { isAuthenticated } = useAuth(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
@@ -13,35 +16,36 @@ function Shoping() {
       .then((data) => {
         setProducts(data.products);
         setLoading(false);
-      })      
+      })
       .catch((error) => {
         console.error("Error fetching data:", error);
         setLoading(false);
-      });      
+      });
   }, []);
 
-  const addToCart = () => {
-    fetch("https://dummyjson.com/carts/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        userId: 1,
-        products: [
-          {
-            id: 144,
-            quantity: 4,
-          },
-          {
-            id: 98,
-            quantity: 1,
-          },
-        ],
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+  const addToCart = (productId) => {
+    if (!isAuthenticated) {
+      navigate("/login");
+    } else {
+      fetch("https://dummyjson.com/carts/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId: 1,
+          products: [
+            {
+              id: productId,
+              quantity: 1,
+            },
+          ],
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          navigate("/cart");
+        });
+    }
   };
 
   return (
@@ -55,7 +59,7 @@ function Shoping() {
               </h2>
             </Col>
           </Row>
-          {loading ? ( 
+          {loading ? (
             <ShimmerSimpleGallery card imageHeight={700} />
           ) : (
             <Row>
@@ -82,17 +86,17 @@ function Shoping() {
                         <p className="card-text">
                           <strong>Brand:</strong> {shop.brand}
                         </p>
-                        <div className="add_to_cart py-3">
-                          <Link
-                            to="/cart"
-                            onClick={addToCart}
+                    
+                      </div>
+                    </Link>
+                    <div className="add_to_cart py-3">
+                          <button
+                            onClick={() => addToCart(shop.id)}
                             className="btn btn-primary w-100"
                           >
                             Add to Cart
-                          </Link>
+                          </button>
                         </div>
-                      </div>
-                    </Link>
                   </div>
                 </div>
               ))}
@@ -105,7 +109,6 @@ function Shoping() {
 }
 
 export default Shoping;
-
 
 
 

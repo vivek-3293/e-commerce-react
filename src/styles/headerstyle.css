@@ -150,6 +150,10 @@ header a:hover {
   .mainText h2 {
     font-size: 28px;
   }
+
+  .user-name{
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 576px) {

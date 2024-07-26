@@ -7,7 +7,9 @@ import Blog from "../pages/blog";
 import Footer from "../pages/footer";
 import Contact from "../pages/contact/contact";
 
+
 const Home = () => {
+  
   return (
     <>
       <Header />

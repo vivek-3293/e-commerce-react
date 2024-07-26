@@ -6,8 +6,7 @@ import "../login-form/login.css";
 import { useAuth } from "../shoping-cart/authContext";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login, isAuthenticated } = useAuth();
@@ -17,10 +16,19 @@ const Login = () => {
     if (isAuthenticated) {
       navigate("/");
     }
-    }, [isAuthenticated, navigate]);  
+  }, [isAuthenticated, navigate]);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    const { username, password } = formData;
     if (!username || !password) {
       setError("Both fields are required.");
       return;
@@ -51,7 +59,6 @@ const Login = () => {
       setError(error.message || "An error occurred");
     }
   };
-  
 
   return (
     <div className="container d-flex flex-column align-items-center my-5" id="contact">
@@ -67,8 +74,8 @@ const Login = () => {
             className="form-control"
             autoComplete="off"
             placeholder="Enter your Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={formData.username}
+            onChange={handleInputChange}
           />
         </div>
         <div className="form-group">
@@ -80,8 +87,8 @@ const Login = () => {
             className="form-control"
             autoComplete="off"
             placeholder="Enter your Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formData.password}
+            onChange={handleInputChange}
           />
         </div>
         <div className="d-flex justify-content-center">
@@ -92,11 +99,10 @@ const Login = () => {
       </form>
     </div>
   );
-
 };
 
-
 export default Login;
+
 
 
 // username : emilys  password : emilyspass

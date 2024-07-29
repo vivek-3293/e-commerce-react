@@ -3,13 +3,14 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    
     if (token) {
-      fetch("https://dummyjson.com/auth/me", {
+      fetch('https://dummyjson.com/auth/me', {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -23,7 +24,7 @@ export const AuthProvider = ({ children }) => {
         })
         .then((data) => {
           if (data && !data.error) {
-            setUser(data);
+            setUser({ username: data.username, password: data.password });
             setIsAuthenticated(true);
           } else {
             setIsAuthenticated(false);
@@ -55,3 +56,4 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => useContext(AuthContext);
+

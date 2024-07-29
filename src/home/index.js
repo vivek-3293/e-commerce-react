@@ -6,12 +6,12 @@ import CustomerReview from "../pages/review";
 import Blog from "../pages/blog";
 import Footer from "../pages/footer";
 import Contact from "../pages/contact/contact";
-// import { useAuth } from "../pages/shoping-cart/authContext";
+import { useAuth } from "../pages/shoping-cart/authContext";
 
 
 const Home = () => {
-  // const { login,user, isAuthenticated } = useAuth();
-  // console.log('user',login,"userrr",user, isAuthenticated);
+  const { user, isAuthenticated } = useAuth();
+  console.log("user",user, isAuthenticated);
   return (
     <>
       <Header />

@@ -1,4 +1,4 @@
-// username : emilys  password : emilyspass
+//username : emilys  password : emilyspass
 
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,7 @@ const Login = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const {login, isAuthenticated } = useAuth();
+  const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Login = () => {
 
       if (data.token) {
         localStorage.setItem('token', data.token);  
-        login({ username });
+        login({ username, password });
         navigate("/");
       } else {
         setError("Invalid credentials");
@@ -104,6 +104,5 @@ const Login = () => {
 export default Login;
 
 
-
-// username : emilys  password : emilyspass
+// //username : emilys  password : emilyspass
 

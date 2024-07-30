@@ -6,7 +6,7 @@ import "../login-form/login.css";
 import { useAuth } from "../shoping-cart/authContext";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [formData, setFormData] = useState({ username: "", password: "", showPassword: false });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login, isAuthenticated } = useAuth();
@@ -23,6 +23,13 @@ const Login = () => {
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
+    }));
+  };
+
+  const togglePasswordShow = () => {
+    setFormData((prevState) => ({
+      ...prevState,
+      showPassword: !prevState.showPassword,
     }));
   };
 
@@ -78,10 +85,10 @@ const Login = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group position-relative">
           <label htmlFor="password">Password:</label>
           <input
-            type="password"
+            type={formData.showPassword ? "text" : "password"}
             id="password"
             name="password"
             className="form-control"
@@ -90,6 +97,13 @@ const Login = () => {
             value={formData.password}
             onChange={handleInputChange}
           />
+          <span
+            className="position-absolute"
+            onClick={togglePasswordShow}
+            style={{ cursor: "pointer" }}
+          >
+            <i className={formData.showPassword ? "fa fa-eye-slash" : "fa fa-eye"}></i>
+          </span>
         </div>
         <div className="d-flex justify-content-center">
           <button type="submit" className="w-50 btn btn-success mt-3" disabled={loading}>

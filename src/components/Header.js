@@ -50,7 +50,7 @@ function Header() {
                 <Link to="/contact">Contact</Link>
 
                 {isAuthenticated && (
-                  <h2 className="user-name"> {user.username}</h2>
+                  <h2 className="user-name"> Welcome {user.username}</h2>
                 )}
                 <div className="pt-small">
                   {!isAuthenticated ? (

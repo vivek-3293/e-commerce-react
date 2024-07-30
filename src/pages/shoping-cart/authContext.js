@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
         })
         .then((data) => {
           if (data && !data.error) {
+            // console.log(data);
             setUser({ username: data.username, password: data.password });
             setIsAuthenticated(true);
           } else {

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
@@ -8,9 +8,9 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    
+
     if (token) {
-      fetch('https://dummyjson.com/auth/me', {
+      fetch("https://dummyjson.com/auth/me", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     setIsAuthenticated(false);
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
   };
 
   return (
@@ -57,4 +57,3 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => useContext(AuthContext);
-

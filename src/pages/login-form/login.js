@@ -6,7 +6,11 @@ import "../login-form/login.css";
 import { useAuth } from "../shoping-cart/authContext";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ username: "", password: "", showPassword: false });
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+    showPassword: false,
+  });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login, isAuthenticated } = useAuth();
@@ -55,7 +59,7 @@ const Login = () => {
       setLoading(false);
 
       if (data.token) {
-        localStorage.setItem('token', data.token);  
+        localStorage.setItem("token", data.token);
         login({ username, password });
         navigate("/");
       } else {
@@ -68,7 +72,10 @@ const Login = () => {
   };
 
   return (
-    <div className="container d-flex flex-column align-items-center my-5" id="contact">
+    <div
+      className="container d-flex flex-column align-items-center my-5"
+      id="contact"
+    >
       <h3 className="mb-3">Login Form</h3>
       {error && <div className="alert alert-danger">{error}</div>}
       <form className="w-50" onSubmit={handleLogin}>
@@ -102,11 +109,19 @@ const Login = () => {
             onClick={togglePasswordShow}
             style={{ cursor: "pointer" }}
           >
-            <i className={formData.showPassword ? "fa fa-eye-slash" : "fa fa-eye"}></i>
+            <i
+              className={
+                formData.showPassword ? "fa fa-eye-slash" : "fa fa-eye"
+              }
+            ></i>
           </span>
         </div>
         <div className="d-flex justify-content-center">
-          <button type="submit" className="w-50 btn btn-success mt-3" disabled={loading}>
+          <button
+            type="submit"
+            className="w-50 btn btn-success mt-3"
+            disabled={loading}
+          >
             {loading ? "Logging in..." : "Login"}
           </button>
         </div>
@@ -117,6 +132,4 @@ const Login = () => {
 
 export default Login;
 
-
 // //username : emilys  password : emilyspass
-

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../login-form/login.css";
 import { useAuth } from "../shoping-cart/authContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -62,12 +63,11 @@ const Login = () => {
         localStorage.setItem("token", data.token);
         login({ username, password });
         navigate("/");
-      } else {
-        setError("Invalid credentials");
-      }
+        toast.success("Login Successfully");
+      } 
     } catch (error) {
       setLoading(false);
-      setError(error.message || "An error occurred");
+      toast.error(error);
     }
   };
 

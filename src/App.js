@@ -17,6 +17,8 @@ import CustomerReview from "./pages/review";
 import Blog from "./pages/blog";
 import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/contact/contact";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -36,10 +38,12 @@ function App() {
                 <Route path="/review" element={<CustomerReview />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
+                
               </Routes>
             </Router>
           </CartProvider>
         </AuthProvider>
+        <ToastContainer />
       </React.StrictMode>
     </>
   );

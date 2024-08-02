@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import FooterLogo from "../images/headerlogo/shopee-logo-white.webp";
 
-
 function Footer() {
   // Scroll State
   const [isVisible, setIsVisible] = useState(false);

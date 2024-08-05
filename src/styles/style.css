@@ -184,13 +184,13 @@
 /* Contact page */
 
 .contact-form{
-  padding: 20px;
+  padding: 19px;
   background: #f9f9f9;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .contact-map{
-  padding: 20px;
+  padding: 0px 20px;
 }
 
 .cont-main, .contact-map iframe{

@@ -139,10 +139,7 @@ header a:hover {
 
 /* Header Main Page Media Query */
 @media (max-width: 768px) {
-  .main {
-    padding-top: 100px;
-  }
-
+  
   .mainText h1 {
     font-size: 40px;
   }

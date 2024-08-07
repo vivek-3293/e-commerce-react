@@ -71,6 +71,7 @@ header a:hover {
   color: green;
   font-size: 22px;
   margin-bottom: 0px;
+  padding: 7px;
 }
 
 /* <!-------------------------- Main Page ---------------------------> */
@@ -107,7 +108,7 @@ header a:hover {
 
 /* Media Query CSS */
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   header .navbar {
     background-color: var(--white);
   }
@@ -135,6 +136,13 @@ header a:hover {
   button.navbar-toggler .collapsed{
     width: 0px !important;
   }  
+
+  .head-login-btn, .head-logout-btn{
+    margin-left: 0px;
+  }
+  .header .logo img{
+    max-width: 250px !important;
+  }
 }
 
 /* Header Main Page Media Query */
@@ -147,16 +155,14 @@ header a:hover {
   .mainText h2 {
     font-size: 28px;
   }
-
-  .user-name{
-    margin-bottom: 10px;
-  }
-}
-
-@media (max-width: 576px) {
   .pt-small{
     padding: 10px 0px !important;
   }
+
+}
+
+@media (max-width: 576px) {
+  
   .main {
     padding-top: 70px;
   }

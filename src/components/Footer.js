@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import FooterLogo from "../images/headerlogo/shopee-logo-white.webp";
+import "../styles/footerstyle.css";
 
 function Footer() {
   // Scroll State

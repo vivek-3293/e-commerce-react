@@ -1,0 +1,53 @@
+/* Footer Style*/
+.footer {
+    background-color: #000 !important;
+    color: var(--white);
+  }
+  
+  .footerLogo img {
+    width: 180px;
+    padding-bottom: 30px;
+  }
+  
+  .footer h2 {
+    font-size: 1.5rem;
+    padding: 20px 0;
+  }
+  
+  .footer p {
+    padding-top: 5px !important;
+  }
+  
+  .scroll_top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--light-red);
+    color: var(--white);
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .scroll_top:hover {
+    background: var(--white);
+    color: #000;
+  }
+  
+
+  /* Media Query Styles */
+
+@media (max-width: 768px) {
+ 
+  /* Footer page */
+  .footerLogo img {
+    width: 80px;
+    padding-bottom: 20px;
+  }
+
+  .footer h2 {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+}

@@ -1,20 +1,22 @@
 import "../styles/style.css";
-import Header from "../components/Header";
+import Header from "./Header";
 import Shoping from "../pages/shoping-cart/shoping";
 import Products from "../pages/products";
 import CustomerReview from "../pages/review";
 import Blog from "../pages/blog";
-import Footer from "../pages/footer";
+import Footer from "./Footer";
 import Contact from "../pages/contact/contact";
+import HomeBanner from "../pages/Home-Banner";
 // import { useAuth } from "../pages/shoping-cart/authContext";
 
 
-const Home = () => {
+const Layout = () => {
   // const { user, isAuthenticated } = useAuth();
   // console.log("user",user, isAuthenticated);
   return (
     <>
       <Header />
+      <HomeBanner />
       <Shoping />
       <CustomerReview />
       <Products />
@@ -26,4 +28,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Layout;

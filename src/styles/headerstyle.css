@@ -47,7 +47,6 @@ header .sticky a {
 header a:hover {
   color: var(--yellow);
 }
-
 .head-login-btn, .head-logout-btn {
   width: 90px;
   height: 45px;
@@ -59,7 +58,6 @@ header a:hover {
   text-transform: uppercase;
   border-radius: 4px;
   cursor: pointer;
-  /* padding: 0.75rem; */
 }
 .head-logout-btn{  
   background-color: rgba(243, 7, 26, 0.932);  
@@ -110,7 +108,7 @@ header a:hover {
 
 @media (max-width: 1024px) {
   header .navbar {
-    background-color: var(--white);
+    background-color: #000;
   }
   header .navbar-toggler {
     bottom: none;
@@ -129,10 +127,7 @@ header a:hover {
     padding: 5px !important;
     color: white;
   }
-  header .bg-992 {
-    background-color: black !important;
-  }
-
+  
   button.navbar-toggler .collapsed{
     width: 0px !important;
   }  
@@ -147,6 +142,10 @@ header a:hover {
 
 /* Header Main Page Media Query */
 @media (max-width: 768px) {
+  
+  .h-100vh{
+    height: 100vh;
+  }
   
   .mainText h1 {
     font-size: 40px;

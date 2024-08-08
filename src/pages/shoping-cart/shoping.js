@@ -25,7 +25,7 @@ function Shoping() {
 
   const addToCart = (productId) => {
     if (!isAuthenticated) {
-      navigate("/login");
+      navigate("/login", { state: { from: { pathname: "/cart" } } });
     } else {
       fetch("https://dummyjson.com/carts/add", {
         method: "POST",
@@ -42,11 +42,11 @@ function Shoping() {
       })
         .then((res) => res.json())
         .then((data) => {
-          // console.log(data);
           navigate("/cart");
         });
     }
   };
+  
 
   return (
     <section className="cloth_shoping" id="shop">

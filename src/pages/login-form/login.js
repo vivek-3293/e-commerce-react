@@ -1,7 +1,7 @@
 //username : emilys  password : emilyspass
 
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../login-form/login.css";
 import { useAuth } from "../shoping-cart/authContext";
 import { toast } from "react-toastify";
@@ -16,12 +16,14 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/");
+      const redirectPath = location.state?.from?.pathname || "/";
+      navigate(redirectPath);
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, navigate, location.state]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -62,12 +64,11 @@ const Login = () => {
       if (data.token) {
         localStorage.setItem("token", data.token);
         login({ username, password });
-        navigate("/");
         toast.success("Login Successfully");
       } 
     } catch (error) {
       setLoading(false);
-      toast.error(error);
+      toast.error("Failed to login.");
     }
   };
 
@@ -131,5 +132,6 @@ const Login = () => {
 };
 
 export default Login;
+
 
 // //username : emilys  password : emilyspass

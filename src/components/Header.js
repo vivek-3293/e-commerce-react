@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Nav, Navbar, Button } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import HeadLogo from "../images/headerlogo/shopee-logo-white.webp";
-import HeadBanner from "../images/headerbanner/banner.png";
 import "../styles/headerstyle.css";
 import { useAuth } from "../pages/shoping-cart/authContext";
 
 function Header() {
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
-  const { user, isAuthenticated , logout } = useAuth();
+  const { user, isAuthenticated, logout } = useAuth();
 
   // ========= Custom Scrollbar ==========
   const changeValueOnScroll = () => {
@@ -31,7 +30,7 @@ function Header() {
         <Navbar
           collapseOnSelect
           expand="lg"
-          className={`${nav === true ? "sticky" : ""} bg-992`}
+          className={`${nav === true ? "sticky" : ""}`}
         >
           <Container>
             <Navbar.Brand href="#home">
@@ -41,7 +40,7 @@ function Header() {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse className="toggle-w" id="responsive-navbar-nav">
-              <Nav className="ms-auto align-items-center">
+              <Nav className="ms-auto align-items-center h-100vh">
                 <Link to="/">Home</Link>
                 <Link to="/shop">Shop</Link>
                 <Link to="/review">Review</Link>
@@ -55,7 +54,7 @@ function Header() {
                 <div className="pt-small">
                   {!isAuthenticated ? (
                     <Link to="/login">
-                      <button className="head-login-btn">Login</button>                      
+                      <button className="head-login-btn">Login</button>
                     </Link>
                   ) : (
                     <button
@@ -71,29 +70,8 @@ function Header() {
           </Container>
         </Navbar>
       </header>
-
-      {/* <!=========== Main Page ============> */}
-
-      <Container>
-        <Row className="main d-flex justify-content-center align-items-center">
-          <Col md={6} className="text-center mainText">
-            <h2>Fashion Hub</h2>
-            <h1>Fashion For Always</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <Button className="main-btn">Explore</Button>
-          </Col>
-          <Col md={6} className="text-center">
-            <Link to="/">
-              <img src={HeadBanner} alt="HeadBanner" className="img-fluid" />
-            </Link>
-          </Col>
-        </Row>
-      </Container>
     </>
   );
 }
 
 export default Header;
-
-
-

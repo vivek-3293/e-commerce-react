@@ -7,22 +7,22 @@ import product4 from "../images/cloths/c4.webp";
 const blogs = [
   {
     img: product1,
-    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, numquam?',
+    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, ipsum dolor sit amet consectetur numquam?',
     link: 'https://www.hellofashionblog.com/'
   },
   {
     img: product2,
-    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, numquam?',
+    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, ipsum dolor sit amet consectetur numquam?',
     link: 'https://www.itscasualblog.com/'
   },
   {
     img: product3,
-    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, numquam?',
+    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, ipsum dolor sit amet consectetur numquam?',
     link: 'https://www.hellofashionblog.com/'
   },
   {
     img: product4,
-    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, numquam?',
+    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, ipsum dolor sit amet consectetur numquam?',
     link: 'https://www.itscasualblog.com/'
   }
 ];

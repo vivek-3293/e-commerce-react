@@ -207,21 +207,26 @@
   text-align: center;
   background-color: #fff;
   margin-inline: 22px;
-  padding-bottom: 11px;
+  padding-bottom: 40px;
   border-radius: 5px;
   margin-top: 20px;
 }
 .blogCard img {
   width: 100%;
+  height: 635px;
   border-radius: 5px;
   margin-bottom: 10px;
 }
+.blogCard p{
+  padding: 15px;
+}
 .blogCard a {
-  padding: 4px 20px;
+  padding: 10px 20px;
   background-color: rgb(3, 151, 151);
   color: white;
   font-size: 18px;
   text-decoration: none;
+  border-radius: 5px;
 }
 .blogCard:hover {
   transition: 0.5s ease;

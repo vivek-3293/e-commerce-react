@@ -52,7 +52,7 @@ function Shoping() {
     <section className="cloth_shoping" id="shop">
       <Container>
         <>
-          <Row>
+          <Row className="pt-40">
             <Col lg={{ span: 8, offset: 2 }} className="text-center mb-2">
               <h2>
                 Trending <span>Clothes</span>

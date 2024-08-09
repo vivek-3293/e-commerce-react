@@ -24,7 +24,7 @@ const reviewsData = [
 
 const CustomerReview = () => {
   return (
-    <div className="customer" id="review">
+    <div className="customer pt-95" id="review">
       <div className="review-head text-center">
         <h1>Customer <span>Review</span></h1>
       </div>

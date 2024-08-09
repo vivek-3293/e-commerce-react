@@ -12,7 +12,7 @@ const Cart = () => {
 
   return (
     <Container>
-      <h1 className="my-4 text-center">Cart Items</h1>
+      <h1 className="my-5 pt-55 text-center">Cart <span className="cart-span">Items</span></h1>
 
       {carts.map((cart) => (
         <Card key={cart.id} className="mb-2">

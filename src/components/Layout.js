@@ -7,6 +7,7 @@ import Blog from "../pages/blog";
 import Footer from "./Footer";
 import Contact from "../pages/contact/contact";
 import HomeBanner from "../pages/Home-Banner";
+import { Outlet } from "react-router-dom";
 // import { useAuth } from "../pages/shoping-cart/authContext";
 
 
@@ -16,12 +17,20 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <HomeBanner />
+      <main>
+        <Outlet />
+      </main>
+      {/* <br />
+      <br />
+      <br />
+      <br />
+      <br /> */}
+      {/* <HomeBanner />
       <Shoping />
       <CustomerReview />
       <Products />
       <Blog />
-      <Contact />
+      <Contact /> */}
       <Footer />
       
     </>

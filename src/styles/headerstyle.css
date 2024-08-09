@@ -1,22 +1,22 @@
-
 /* Custom Scrollbar */
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 5px;
 }
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: var(--yellow);
 }
 
 /* Header CSS */
 header {
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   background: #000;
   z-index: 1000;
   overflow: hidden;
+  margin-bottom: -40px;
 }
 
 header .logo img {
@@ -47,7 +47,8 @@ header .sticky a {
 header a:hover {
   color: var(--yellow);
 }
-.head-login-btn, .head-logout-btn {
+.head-login-btn,
+.head-logout-btn {
   width: 90px;
   height: 45px;
   color: white;
@@ -59,49 +60,18 @@ header a:hover {
   border-radius: 4px;
   cursor: pointer;
 }
-.head-logout-btn{  
-  background-color: rgba(243, 7, 26, 0.932);  
+.head-logout-btn {
+  background-color: rgba(243, 7, 26, 0.932);
 }
-.head-login-btn:hover, .head-logout-btn:hover{
+.head-login-btn:hover,
+.head-logout-btn:hover {
   background-color: var(--yellow);
 }
-.user-name{
+.user-name {
   color: green;
   font-size: 22px;
   margin-bottom: 0px;
   padding: 7px;
-}
-
-/* <!-------------------------- Main Page ---------------------------> */
-
-.main {
-  padding-top: 150px;
-}
-.mainText h1, .mainText h2, .mainText p {
-  padding-top: 40px;
-}
-.mainText h1 {
-  font-size: 50px;
-  color: rgb(3, 168, 168);
-}
-.mainText h2 {
-  font-size: 33px;
-}
-.main-btn {
-  width: 115px;
-  height: 50px;
-  color: white;
-  font-size: 18px;
-  border: none;
-  background-color: rgb(3, 123, 123);
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.main-btn:hover {
-  border: 2px solid rgb(3, 163, 163);
-  background-color: transparent;
-  color: black;
-  cursor: pointer;
 }
 
 /* Media Query CSS */
@@ -127,59 +97,23 @@ header a:hover {
     padding: 5px !important;
     color: white;
   }
-  
-  button.navbar-toggler .collapsed{
-    width: 0px !important;
-  }  
 
-  .head-login-btn, .head-logout-btn{
+  button.navbar-toggler .collapsed {
+    width: 0px !important;
+  }
+
+  .head-login-btn,
+  .head-logout-btn {
     margin-left: 0px;
   }
-  .header .logo img{
+  .header .logo img {
     max-width: 250px !important;
   }
 }
 
-/* Header Main Page Media Query */
+
 @media (max-width: 768px) {
-  
-  .h-100vh{
+  .h-100vh {
     height: 100vh;
   }
-  
-  .mainText h1 {
-    font-size: 40px;
-  }
-
-  .mainText h2 {
-    font-size: 28px;
-  }
-  .pt-small{
-    padding: 10px 0px !important;
-  }
-
 }
-
-@media (max-width: 576px) {
-  
-  .main {
-    padding-top: 70px;
-  }
-
-  .mainText h1 {
-    font-size: 30px;
-  }
-
-  .mainText h2 {
-    font-size: 24px;
-    padding-top: 60px;
-  }
-
-  .main-btn {
-    width: 100px;
-    height: 45px;
-    font-size: 16px;
-  }
-}
-
-

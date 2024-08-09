@@ -14,6 +14,7 @@ import Contact from "./pages/contact/contact";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "./components/Layout";
+import HomeBanner from "./pages/Home-Banner";
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
             <Router>
               <Routes>
                 <Route path="/login" element={<Login />} />
-                <Route path="/" element={<Layout />} />
+                <Route path="/" element={<Layout />} >
+                <Route index element={<HomeBanner />} />
                 <Route path="/shop" element={<Shoping />} />
                 <Route path="/product" element={<Products />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
@@ -32,6 +34,7 @@ function App() {
                 <Route path="/review" element={<CustomerReview />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
+                </Route>
               </Routes>
             </Router>
           </CartProvider>

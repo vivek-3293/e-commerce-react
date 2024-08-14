@@ -1,3 +1,15 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+}
+
+/* Header CSS */
 .main-head {
   z-index: 1000;
   width: 100%;
@@ -109,15 +121,4 @@ header {
   .menu {
     display: block;
   }
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--yellow);
 }

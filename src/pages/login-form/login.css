@@ -9,10 +9,14 @@
   margin-bottom: 0.5rem;
 }
 
+.light-red{
+  color: var(--light-red);
+}
+
 
 .position-absolute {
-  top: 40px;
-  right: 20px;
+  top: 35px;
+  right: 15px;
 }
 
 

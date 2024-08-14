@@ -77,7 +77,7 @@ const Login = () => {
       className="container d-flex flex-column align-items-center my-5"
       id="contact"
     >
-      <h3 className="mb-3">Login Form</h3>
+      <h3 className="mb-3">Login <span className="light-red">Form</span></h3>
       {error && <div className="alert alert-danger">{error}</div>}
       <form className="w-50" onSubmit={handleLogin}>
         <div className="form-group">

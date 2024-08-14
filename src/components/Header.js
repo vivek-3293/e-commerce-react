@@ -49,7 +49,7 @@ function Header() {
                 className="menu-toggle"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                ☰
+                <i className="fa-solid fa-bars"></i>
               </button>
             </div>
           </div>

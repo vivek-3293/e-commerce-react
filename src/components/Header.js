@@ -33,7 +33,7 @@
 //     expand="lg"
 //     className={`${nav === true ? "sticky" : ""}`}
 //   >
-//     {/* <Container>
+//     <Container>
 //       <Navbar.Brand href="#home">
 //         <Link to="/" className="logo">
 //           <img src={HeadLogo} alt="HeadLogo" className="img-fluid" />
@@ -68,7 +68,7 @@
 //           </div>
 //         </Nav>
 //       </Navbar.Collapse>
-//     </Container> */}
+//     </Container>
 //   </Navbar>
 // </header>
 
@@ -78,37 +78,79 @@
 
 // export default Header;
 
-import React, { useState } from "react";
-import "../styles/Navbar.css";
-import Logo from "../images/headerlogo/shopee-logo-white.webp";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import HeadLogo from "../images/headerlogo/shopee-logo-white.webp";
+import "../styles/headerstyle.css";
+import { useAuth } from "../pages/shoping-cart/authContext";
 
-const Header = () => {
-  
+function Header() {
+  const [nav, setNav] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const { user, isAuthenticated, logout } = useAuth();
+
+  const handleScroll = () => {
+    const scrollValue = document.documentElement.scrollTop;
+    setNav(scrollValue > 100);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleLogoutClick = () => {
+    logout();
+    navigate("/");
+  };
 
   return (
-    <div className="web-header">
-      <nav className="header-navbar d-flex align-items-center justify-content-between">
-      <div className="header-navbar-logo">
-        <img src={Logo} alt="Logo" />
-      </div>
-    
-
-      <div className={'header-navbar-links d-flex align-items-center'}>
-        <a className="text-decoration-none text-white" href="/">Home</a>
-        <a className="text-decoration-none text-white" href="/about">About</a>
-        <a className="text-decoration-none text-white" href="/services">Services</a>
-        <a className="text-decoration-none text-white" href="/contact">Contact</a>
-
-        <div className="d-flex align-items-center">
-          <div>
-          <a className="text-decoration-none text-white" href="">Login</a>
+    <div className="main-head position-fixed top-0 start-0">
+      <header className={nav ? "sticky" : ""}>
+      <div className="container d-flex align-items-center justify-content-between">
+        <div className="w-100 d-flex align-items-center justify-content-between">
+          <div className="logo">
+            <Link to="/">
+              <img src={HeadLogo} alt="HeadLogo" />
+            </Link>
           </div>
-          <a className="text-decoration-none text-white" href="">Logout</a>
+          <div>
+            <button
+              className="menu-toggle"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              ☰
+            </button>
+          </div>
         </div>
+        <nav className={`menu ${isMenuOpen ? "open" : ""}`}>
+          <Link to="/">Home</Link>
+          <Link to="/shop">Shop</Link>
+          <Link to="/review">Review</Link>
+          <Link to="/product">Product</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/contact">Contact</Link>
+
+          {isAuthenticated && (
+            <h2 className="user-name">Welcome {user.username}</h2>
+          )}
+          <div className="auth-buttons">
+            {!isAuthenticated ? (
+              <Link to="/login">
+                <button className="login-btn">Login</button>
+              </Link>
+            ) : (
+              <button className="logout-btn" onClick={handleLogoutClick}>
+                Logout
+              </button>
+            )}
+          </div>
+        </nav>
       </div>
-    </nav>
+    </header>
     </div>
   );
-};
+}
 
 export default Header;

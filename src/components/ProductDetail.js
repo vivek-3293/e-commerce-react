@@ -20,7 +20,7 @@ const ProductDetail = () => {
   }, [id]);
 
   return (
-    <div className="container p-3 d-flex" id="product-detail">
+    <div className="container ptb-5rem d-flex" id="product-detail">
       {loading ? (
         <>loading</>
       ) : (

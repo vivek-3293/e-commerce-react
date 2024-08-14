@@ -1,5 +1,107 @@
+.main-head{
+  z-index: 1000;
+  width: 100%;
+}
+header {
+  background-color: #333;
+  padding: 10px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.sticky {
+  background-color: #000;
+}
+
+.logo img {
+  height: 70px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu.open {
+  display: block;
+  transform: translateX(0);
+}
+
+.menu a {
+  display: block;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: large;
+}
+
+.menu a:hover {
+  color: #abf00c;
+}
+
+.menu .user-name {
+  color: green;
+  padding: 10px;
+  font-size: 16px;
+  padding-bottom: 0px;
+}
+
+.login-btn,
+.logout-btn {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.login-btn {
+  background-color: green;
+  color: #fff;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #333;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+  }
+
+  .logout-btn {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 570px) {
+  .menu{
+    display: block;
+  }
+}
+
 /* Custom Scrollbar */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
@@ -7,16 +109,19 @@
 }
 ::-webkit-scrollbar-thumb {
   background: var(--yellow);
-}
+} */
 
 /* Header CSS */
 
-header {
+/* header {
   width: 100%;
   background: #000;
   z-index: 1000;
   overflow: hidden;
   margin-bottom: -40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header .logo img {
@@ -81,14 +186,12 @@ header a:hover {
 
 .navbar-collapse {
   padding-top: 20px;
-}
+} */
 
 /* Media Query CSS */
 
-@media (max-width: 1024px) {
-  /* header .navbar {
-    background-color: #000;
-  } */
+/* @media (max-width: 1024px) {
+  
   header .navbar-toggler {
     bottom: none;
   }
@@ -137,9 +240,10 @@ header a:hover {
 
   .toggle-w {
     position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #000;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
   }
@@ -156,4 +260,4 @@ header a:hover {
   .ms-auto{
     padding-left: 20px;
   }
-}
+} */

@@ -24,7 +24,7 @@ const Products = () => {
     <div className="container" id="product">
       <>
         <div className="products">
-          <h1 className="text-center my-4">
+          <h1 className="text-center my-5">
             Product <span>List</span>
           </h1>
         </div>

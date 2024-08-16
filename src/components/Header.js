@@ -54,7 +54,7 @@ function Header() {
               </button>
             </div>
           </div>
-          <nav className={classNames("menu", { open: isMenuOpen })}>
+          <nav className={classNames("menu", { 'open' : isMenuOpen })}>
             <Link to="/" onClick={handleMenuLinkClick}>
               Home
             </Link>
@@ -88,6 +88,7 @@ function Header() {
                 </button>
               )}
             </div>
+            <div><i className="cart-icon fa-sharp fa-solid fa-cart-shopping"></i></div>
           </nav>
         </div>
       </header>

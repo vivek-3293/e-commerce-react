@@ -50,7 +50,7 @@ header {
 
 .menu a {
   display: block;
-  padding: 12px 20px;
+  padding: 0px 14px;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -64,8 +64,8 @@ header {
 .menu .user-name {
   color: green;
   padding-top: 10px;
-  padding-right: 16px;
-  font-size: 17px;
+  /* padding-right: 12px; */
+  font-size: 16px;
   padding-bottom: 0px;
 }
 .head-buttons{
@@ -75,11 +75,11 @@ header {
 .login-btn,
 .logout-btn {
   border: none;
-  padding: 10px 20px;
+  padding: 7px 14px;
   cursor: pointer;
   border-radius: 8px;
   font-weight: bold;
-  margin-left: -7px;
+  /* margin-left: -7px; */
 }
 
 .login-btn {
@@ -90,9 +90,14 @@ header {
 .logout-btn {
   background-color: #dc3545;
   color: #fff;
+  margin-right: 10px;
 }
 .login-btn:hover, .logout-btn:hover {
   background-color: var(--yellow);
+}
+.cart-icon{
+  color: #fff;
+  font-size: 35px;
 }
 
 @media (max-width: 992px) {
@@ -109,6 +114,9 @@ header {
     transition: transform 0.3s ease;
     transform: translateX(-100%);
   }
+  .menu a {
+    padding: 9px 22px;
+  }
   .menu.open {
     transform: translateX(0);
   }
@@ -121,6 +129,10 @@ header {
   }
   .menu .user-name {
     padding-left: 18px;
+  }
+  .cart-icon{
+    padding-top: 20px;
+    padding-left: 20px;
   }
   .no-scroll {
     overflow: hidden;

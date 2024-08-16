@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import HeadLogo from "../images/headerlogo/shopee-logo-white.webp";
 import "../styles/headerstyle.css";
 import { useAuth } from "../pages/shoping-cart/authContext";
+import classNames from "classnames";
 
 function Header() {
   const [nav, setNav] = useState(false);
@@ -53,7 +54,7 @@ function Header() {
               </button>
             </div>
           </div>
-          <nav className={`menu ${isMenuOpen ? "open" : ""}`}>
+          <nav className={classNames("menu", { open: isMenuOpen })}>
             <Link to="/" onClick={handleMenuLinkClick}>
               Home
             </Link>
@@ -76,7 +77,7 @@ function Header() {
             {isAuthenticated && (
               <h2 className="user-name">Welcome {user.username}</h2>
             )}
-            <div className="auth-buttons">
+            <div className="head-buttons">
               {!isAuthenticated ? (
                 <Link to="/login">
                   <button className="login-btn">Login</button>

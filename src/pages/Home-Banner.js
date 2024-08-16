@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 import HeadBanner from "../images/headerbanner/banner.png";
-import { Button, Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function HomeBanner() {
   return (
     <>
-        <Container>
+      <Container>
         <Row className="main d-flex justify-content-center align-items-center">
           <Col md={6} className="text-center mainText">
             <h2>Fashion Hub</h2>
@@ -21,8 +21,9 @@ function HomeBanner() {
           </Col>
         </Row>
       </Container>
+     
     </>
-  )
+  );
 }
 
-export default HomeBanner
+export default HomeBanner;

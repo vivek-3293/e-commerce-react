@@ -1,9 +1,11 @@
 /* HomeBanner Page */
 
-.main {
-  margin-bottom: 40px;
-  margin-top: 125px;
+.main{
+  margin-top: 65px;
+  padding-bottom:40px ;
+  padding-top: 50px;
 }
+
 .mainText h1,
 .mainText h2,
 .mainText p {
@@ -31,7 +33,7 @@
   background-color: transparent;
   color: black;
   cursor: pointer;
-}
+} 
 
 /* Shoping Page */
 
@@ -107,9 +109,9 @@
 
 /* Cart Page CSS */
 
-/* .pt-55{
-  padding-top: 55px;
-} */
+.mt-80{
+  margin-top: 80px;
+}
 .cart-span{
   color: var(--light-red);
 }
@@ -187,7 +189,6 @@
 
 /* Blog Page */
 .blogs {
-  /* margin: 40px 0px; */
   background-color: #f5f5f5;
 }
 
@@ -287,9 +288,13 @@
 
     .mainText h2 {
       font-size: 28px;
+      padding-top: 25px;
     }
     .pt-small {
       padding: 10px 0px !important;
+    }
+    .pt-media{
+      padding-top: 25px;
     }
   }
 }
@@ -356,7 +361,7 @@
 
   .mainText h2 {
     font-size: 24px;
-    padding-top: 60px;
+    padding-top: 25px;
   }
 
   .main-btn {

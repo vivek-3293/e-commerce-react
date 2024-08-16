@@ -13,6 +13,7 @@
 .main-head {
   z-index: 1000;
   width: 100%;
+  overflow: hidden;
 }
 header {
   background-color: #333;
@@ -26,7 +27,7 @@ header {
 }
 
 .logo img {
-  height: 70px;
+  height: 65px;
 }
 
 .menu-toggle {
@@ -53,7 +54,7 @@ header {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .menu a:hover {
@@ -62,9 +63,13 @@ header {
 
 .menu .user-name {
   color: green;
-  padding: 10px;
-  font-size: 16px;
+  padding-top: 10px;
+  padding-right: 16px;
+  font-size: 17px;
   padding-bottom: 0px;
+}
+.head-buttons{
+  margin-left: 10px;
 }
 
 .login-btn,
@@ -86,6 +91,9 @@ header {
   background-color: #dc3545;
   color: #fff;
 }
+.login-btn:hover, .logout-btn:hover {
+  background-color: var(--yellow);
+}
 
 @media (max-width: 992px) {
   .menu-toggle {
@@ -104,20 +112,33 @@ header {
   .menu.open {
     transform: translateX(0);
   }
-
+  .login-btn {
+    margin-left: -12px;
+  }
   .logout-btn {
     margin-left: 10px;
     margin-top: 10px;
+  }
+  .menu .user-name {
+    padding-left: 18px;
   }
   .no-scroll {
     overflow: hidden;
   }
 }
+
+@media (max-width: 768px) {
+  .menu {
+    display: block;
+  }
+}
+
 @media (max-width: 646px) {
   .menu {
     display: block;
   }
 }
+
 @media (max-width: 570px) {
   .menu {
     display: block;

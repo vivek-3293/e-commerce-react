@@ -12,8 +12,11 @@ const Cart = () => {
 
   return (
     <Container>
-      <h1 className="my-5 pt-55 text-center">Cart <span className="cart-span">Items</span></h1>
-
+      <div className="mt-80">
+        <h1 className="py-5 text-center">
+          Cart <span className="cart-span">Items</span>
+        </h1>
+      </div>
       {carts.map((cart) => (
         <Card key={cart.id} className="mb-2">
           <Card.Header>Cart ID: {cart.id}</Card.Header>

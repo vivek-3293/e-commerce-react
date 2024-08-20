@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import HeadLogo from "../images/headerlogo/shopee-logo-white.webp";
 import "../styles/headerstyle.css";
 import { useAuth } from "../pages/shoping-cart/authContext";
+import { useCart } from "../pages/Cart/cartContext";
 import classNames from "classnames";
 
 function Header() {
@@ -10,6 +11,7 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
+  const { cartCount } = useCart();
 
   const handleScroll = () => {
     const scrollValue = document.documentElement.scrollTop;
@@ -54,7 +56,7 @@ function Header() {
               </button>
             </div>
           </div>
-          <nav className={classNames("menu", { 'open' : isMenuOpen })}>
+          <nav className={classNames("menu", { open: isMenuOpen })}>
             <Link to="/" onClick={handleMenuLinkClick}>
               Home
             </Link>
@@ -88,7 +90,10 @@ function Header() {
                 </button>
               )}
             </div>
-            <div><i className="cart-icon fa-sharp fa-solid fa-cart-shopping"></i></div>
+            <div>
+              <i className="cart-icon fa-sharp fa-solid fa-cart-shopping"></i>
+              {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+            </div>
           </nav>
         </div>
       </header>

@@ -185,6 +185,9 @@
 .card-text {
   margin-bottom: 0.5rem;
 }
+.card-title {
+  font-size: 22px;
+}
 
 /* Blog Page */
 .blogs {
@@ -321,7 +324,7 @@
 /* Small devices (less than 576px) */
 @media (max-width: 575px) {
   .card-title {
-    font-size: 1.25rem;
+    font-size: 20px;
   }
 
   .card-subtitle {
@@ -336,7 +339,7 @@
 /* Medium devices (tablets, 576px and up) */
 @media (min-width: 576px) and (max-width: 767px) {
   .card-title {
-    font-size: 1.375rem;
+    font-size: 20px;
   }
 
   .card-subtitle {
@@ -371,7 +374,7 @@
 /* Large devices (desktops, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
   .card-title {
-    font-size: 1.5rem;
+    font-size: 20px;
   }
 
   .card-subtitle {
@@ -384,9 +387,9 @@
 }
 
 /* Extra large devices (large desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (min-width: 992px)  {
   .card-title {
-    font-size: 1.75rem;
+    font-size: 22px;
   }
 
   .card-subtitle {

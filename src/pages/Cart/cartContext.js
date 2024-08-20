@@ -21,13 +21,12 @@
 // src/context/CartContext.js
 
 // In src/context/CartContext.js
+
 import React, { createContext, useContext, useState } from "react";
 
 export const CartContext = createContext();
 
-export function useCart() {
-  return useContext(CartContext);
-}
+export const useCart = () => useContext(CartContext);
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
@@ -44,4 +43,3 @@ export function CartProvider({ children }) {
     </CartContext.Provider>
   );
 }
-

@@ -37,6 +37,10 @@ function Header() {
     setIsMenuOpen(false);
   };
 
+  const handleCartClick = () => {
+    navigate("/cart");
+  };
+
   return (
     <div className="main-head position-fixed top-0 start-0">
       <header className={nav ? "sticky" : ""}>
@@ -90,7 +94,7 @@ function Header() {
                 </button>
               )}
             </div>
-            <div>
+            <div className="cart-icon-wrapper" onClick={handleCartClick}>
               <i className="cart-icon fa-sharp fa-solid fa-cart-shopping"></i>
               {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
             </div>

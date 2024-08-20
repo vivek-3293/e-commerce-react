@@ -3,6 +3,7 @@ import { Container, Card } from "react-bootstrap";
 
 const Cart = () => {
   const [carts, setCarts] = useState([]);
+
   useEffect(() => {
     fetch(`https://dummyjson.com/carts`)
       .then((response) => response.json())

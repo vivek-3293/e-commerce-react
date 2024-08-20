@@ -1,22 +1,22 @@
 /* HomeBanner Page */
 
-.main{
+.main {
   margin-top: 65px;
-  padding-bottom:40px ;
+  padding-bottom: 40px;
   padding-top: 50px;
 }
 
 .mainText h1,
 .mainText h2,
 .mainText p {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 .mainText h1 {
-  font-size: 50px;
+  font-size: 40px;
   color: rgb(3, 168, 168);
 }
 .mainText h2 {
-  font-size: 33px;
+  font-size: 30px;
 }
 .main-btn {
   width: 115px;
@@ -26,18 +26,18 @@
   border: none;
   background-color: rgb(3, 123, 123);
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .main-btn:hover {
   border: 2px solid rgb(3, 163, 163);
   background-color: transparent;
   color: black;
   cursor: pointer;
-} 
+}
 
 /* Shoping Page */
 
-.pt-40{
+.pt-40 {
   padding-top: 40px;
 }
 .cloth_shoping {
@@ -109,15 +109,15 @@
 
 /* Cart Page CSS */
 
-.mt-80{
+.mt-80 {
   margin-top: 80px;
 }
-.cart-span{
+.cart-span {
   color: var(--light-red);
 }
 
 /* Review Page */
-.pt-95{
+.pt-95 {
   padding-top: 95px;
 }
 .review-head h1 {
@@ -164,9 +164,8 @@
 /* Products Page */
 .products {
   padding-top: 70px;
-  padding-bottom: 20px;
 }
-.ptb-5rem{
+.ptb-5rem {
   padding: 5rem;
   margin-top: 50px;
 }
@@ -222,7 +221,7 @@
   border-radius: 5px;
   margin-bottom: 10px;
 }
-.blogCard p{
+.blogCard p {
   padding: 15px;
 }
 .blogCard a {
@@ -281,21 +280,19 @@
   }
 
   /* HomeBanner Page Media Query */
-  @media (max-width: 768px) {
-    .mainText h1 {
-      font-size: 40px;
-    }
 
-    .mainText h2 {
-      font-size: 28px;
-      padding-top: 25px;
-    }
-    .pt-small {
-      padding: 10px 0px !important;
-    }
-    .pt-media{
-      padding-top: 25px;
-    }
+  .mainText h1 {
+    font-size: 30px;
+  }
+
+  .mainText h2 {
+    font-size: 28px;
+  }
+  .pt-small {
+    padding: 10px 0px !important;
+  }
+  .pt-media {
+    padding-top: 25px;
   }
 }
 

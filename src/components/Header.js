@@ -80,6 +80,11 @@ function Header() {
               Contact
             </Link>
 
+            <div className="cart-icon-wrapper" onClick={handleCartClick}>
+              <i className="cart-icon position-relative fa-sharp fa-solid fa-cart-shopping"></i>
+              {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+            </div>
+
             {isAuthenticated && (
               <h2 className="user-name">Welcome {user.username}</h2>
             )}
@@ -94,10 +99,7 @@ function Header() {
                 </button>
               )}
             </div>
-            <div className="cart-icon-wrapper" onClick={handleCartClick}>
-              <i className="cart-icon position-relative fa-sharp fa-solid fa-cart-shopping"></i>
-              {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-            </div>
+            
           </nav>
         </div>
       </header>

@@ -19,6 +19,13 @@
   right: 15px;
 }
 
+/* Login Form Media Query */
+
+@media (max-width: 992px) {
+  .position-absolute {
+    top: 35px;
+  }
+}
 
 
 

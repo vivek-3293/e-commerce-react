@@ -38,7 +38,11 @@ function Header() {
   };
 
   const handleCartClick = () => {
-    navigate("/cart");
+    if (isAuthenticated) {
+      navigate("/cart");
+    }else{
+      navigate("/login", { state: { from: { pathname: "/cart" } } });
+    }
   };
 
   return (

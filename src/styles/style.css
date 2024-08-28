@@ -166,8 +166,8 @@
   padding-top: 70px;
 }
 .ptb-5rem {
-  padding: 5rem;
   margin-top: 50px;
+  padding-bottom: 30px;
 }
 
 .products span {
@@ -187,6 +187,10 @@
 }
 .card-title {
   font-size: 22px;
+}
+.pd-heading {
+  font-size: 2.5rem;
+  color: var(--light-red);
 }
 
 /* Blog Page */
@@ -268,38 +272,8 @@
 
 /* Media Query Styles */
 
-@media (max-width: 768px) {
-  /* Blog Page */
-  .blogCard {
-    width: calc(100% - 20px);
-  }
-
-  /* Contact page */
-  .login-form {
-    padding: 1rem;
-  }
-  .contact-map iframe {
-    height: 385px;
-  }
-
-  /* HomeBanner Page Media Query */
-
-  .mainText h1 {
-    font-size: 30px;
-  }
-
-  .mainText h2 {
-    font-size: 28px;
-  }
-  .pt-small {
-    padding: 10px 0px !important;
-  }
-  .pt-media {
-    padding-top: 25px;
-  }
-}
-
-@media (max-width: 480px) {
+/* Small devices (less than 576px) */
+@media (max-width: 575px) {
   .head h1 {
     font-size: 2em;
   }
@@ -318,11 +292,6 @@
   .contact-map {
     padding: 0px;
   }
-}
-
-/* Media queries for Products Details Page */
-/* Small devices (less than 576px) */
-@media (max-width: 575px) {
   .card-title {
     font-size: 20px;
   }
@@ -334,6 +303,24 @@
   .card-text {
     font-size: 0.875rem;
   }
+  /* Product Details Page */
+  .pd-heading {
+    font-size: 1.9rem;
+  }
+  /* Review Page */
+  .review-head h1 {
+    margin-bottom: 40px;
+    padding: 0px;
+  }
+  .pt-40{
+    padding-top: 0px;
+  }
+  .cloth_shoping h2 {
+    font-size: 2.1rem;
+}
+.cloth_shoping span {
+  font-size: 2.1rem;
+}
 }
 
 /* Medium devices (tablets, 576px and up) */
@@ -348,6 +335,11 @@
 
   .card-text {
     font-size: 1rem;
+  }
+  /* Review Page */
+  .review-head h1 {
+    margin-bottom: 40px;
+    padding: 0px;
   }
 
   /* HomeBanner media css */
@@ -369,10 +361,69 @@
     height: 45px;
     font-size: 16px;
   }
+  .head h1 {
+    font-size: 2em;
+  }
+
+  .blogCard p {
+    font-size: 0.9em;
+  }
+  .contact-form {
+    margin-bottom: 20px;
+  }
+  .cont-main,
+  .contact-map iframe {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contact-map {
+    padding: 0px;
+  }
+  .pt-40{
+    padding-top: 0px;
+  }
 }
 
 /* Large devices (desktops, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
+  /* HomeBanner Page Media Query */
+
+  .mainText h1 {
+    font-size: 30px;
+  }
+
+  .mainText h2 {
+    font-size: 28px;
+  }
+  .pt-small {
+    padding: 10px 0px !important;
+  }
+  .pt-media {
+    padding-top: 25px;
+  }
+  /* Blog Page */
+  .blogCard {
+    width: calc(100% - 20px);
+  }
+  .blog-head h1 {
+    padding-top: 90px;
+  }
+  /* Contact page */
+  .login-form {
+    padding: 1rem;
+  }
+  .contact-map iframe {
+    height: 385px;
+  }
+  .contact-head h1 {
+    padding-top: 60px;
+  }
+  /* Review Page */
+  .review-head h1 {
+    margin-bottom: 40px;
+    padding: 0px;
+  }
+  /* Product Details Page */
   .card-title {
     font-size: 20px;
   }
@@ -384,10 +435,17 @@
   .card-text {
     font-size: 1.125rem;
   }
+
+  .pd-heading {
+    font-size: 2.3rem;
+  }
+  .pt-40{
+    padding-top: 0px;
+  }
 }
 
 /* Extra large devices (large desktops, 992px and up) */
-@media (min-width: 992px)  {
+@media (min-width: 992px) {
   .card-title {
     font-size: 22px;
   }
@@ -398,5 +456,10 @@
 
   .card-text {
     font-size: 1.25rem;
+  }
+  /* Review Page */
+  .review-head h1 {
+    margin-bottom: 40px;
+    padding: 0px;
   }
 }

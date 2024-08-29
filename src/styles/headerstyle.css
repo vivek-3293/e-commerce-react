@@ -67,7 +67,7 @@ header {
   font-size: 16px;
   padding-bottom: 0px;
 }
-.menu .user-name:hover{
+.menu .user-name:hover {
   color: #abf00c;
   cursor: pointer;
 }

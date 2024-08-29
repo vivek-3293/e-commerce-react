@@ -62,10 +62,14 @@ header {
 }
 
 .menu .user-name {
-  color: green;
+  color: #f0e9e9;
   padding-top: 10px;
   font-size: 16px;
   padding-bottom: 0px;
+}
+.menu .user-name:hover{
+  color: #abf00c;
+  cursor: pointer;
 }
 .head-buttons {
   margin-left: 10px;
@@ -105,6 +109,10 @@ header {
   cursor: pointer;
   position: relative;
   margin-right: 12px;
+}
+.cart-icon:hover {
+  color: #abf00c;
+  transform: scale(1.3);
 }
 
 .cart-count {

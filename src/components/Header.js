@@ -40,7 +40,7 @@ function Header() {
   const handleCartClick = () => {
     if (isAuthenticated) {
       navigate("/cart");
-    }else{
+    } else {
       navigate("/login", { state: { from: { pathname: "/cart" } } });
     }
   };
@@ -85,7 +85,10 @@ function Header() {
             </Link>
 
             <div className="cart-icon-wrapper" onClick={handleCartClick}>
-              <i className="cart-icon position-relative fa-sharp fa-solid fa-cart-shopping" onClick={handleMenuLinkClick}></i>
+              <i
+                className="cart-icon fa-sharp fa-solid fa-cart-shopping"
+                onClick={handleMenuLinkClick}
+              ></i>
               {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
             </div>
 
@@ -103,7 +106,6 @@ function Header() {
                 </button>
               )}
             </div>
-            
           </nav>
         </div>
       </header>

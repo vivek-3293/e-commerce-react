@@ -37,8 +37,8 @@
 
 /* Shoping Page */
 
-.pt-40 {
-  padding-top: 40px;
+.pt-50 {
+  padding-top: 50px;
 }
 .cloth_shoping {
   padding-top: 50px;
@@ -112,8 +112,8 @@
 .mt-80 {
   margin-top: 80px;
 }
-.cart-span {
-  color: var(--light-red);
+.cart-head-red {
+  color: var(--light-red) !important;
 }
 
 /* Review Page */
@@ -312,9 +312,7 @@
     margin-bottom: 40px;
     padding: 0px;
   }
-  .pt-40{
-    padding-top: 0px;
-  }
+  
   .cloth_shoping h2 {
     font-size: 2.1rem;
 }
@@ -379,9 +377,7 @@
   .contact-map {
     padding: 0px;
   }
-  .pt-40{
-    padding-top: 0px;
-  }
+ 
 }
 
 /* Large devices (desktops, 768px and up) */
@@ -439,9 +435,7 @@
   .pd-heading {
     font-size: 2.3rem;
   }
-  .pt-40{
-    padding-top: 0px;
-  }
+  
 }
 
 /* Extra large devices (large desktops, 992px and up) */

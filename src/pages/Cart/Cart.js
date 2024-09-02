@@ -1,52 +1,60 @@
-import React, { useEffect, useState } from "react";
-import { Container, Card } from "react-bootstrap";
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { useCart } from '../Cart/cartContext';  
 
 const Cart = () => {
-  const [carts, setCarts] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://dummyjson.com/carts`)
-      .then((response) => response.json())
-      .then((data) => setCarts(data.carts))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  const { cartItems, removeFromCart } = useCart();  
 
   return (
-    <Container>
-      <div className="mt-80">
-        <h1 className="py-5 text-center">
-          Cart <span className="cart-span">Items</span>
-        </h1>
-      </div>
-      {carts.map((cart) => (
-        <Card key={cart.id} className="mb-2">
-          <Card.Header>Cart ID: {cart.id}</Card.Header>
-          <Card.Body>
-            <div className="row">
-              {cart.products.slice(0, 2).map((product) => (
-                <div key={product.id} className="col-6">
-                  <div>
-                    <img
-                      src={product.thumbnail}
-                      className="card-img-top"
-                      alt={product.title}
-                    />
-                  </div>
-                  <div className="pt-4">
-                    <div>Title : {product.title}</div>
-                    <div>Price : {product.price}</div>
-                    <div>Quantity: {product.quantity}</div>
-                    <div>Total : {product.total}</div>
-                    <div>Dis% : {product.discountPercentage}</div>
-                    <div>DisTotal : {product.discountedTotal}</div>
+    <section className="cart_page" id="cart">
+      <Container>
+        <Row className="pt-50">
+          <Col lg={{ span: 8, offset: 2 }} className="text-center my-5">
+            <h2>Your <span className='cart-head-red'>Cart</span></h2>
+          </Col>
+        </Row>
+        <Row>
+          {cartItems.length === 0 ? (
+            <Col className="text-center">
+              <h1 className='py-5'><span className='cart-head-red'>Your cart is empty!</span></h1>
+            </Col>
+          ) : (
+            cartItems.map((item) => (
+              <Col md={6} lg={4} className="mb-4" key={item.id}>
+                <div className="card h-100">
+                  <img
+                    src={item.thumbnail}
+                    className="card-img-top"
+                    alt={item.title}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{item.title}</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">
+                      {item.category}
+                    </h6>
+                    <p className="card-text">
+                      <strong>Price:</strong> ${item.price}
+                    </p>
+                    <p className="card-text">
+                      <strong>Rating:</strong> {item.rating}
+                    </p>
+                    <p className="card-text">
+                      <strong>Brand:</strong> {item.brand}
+                    </p>
+                    <button
+                      onClick={() => removeFromCart(item.id)}
+                      className="btn btn-danger w-100"
+                    >
+                      Remove from Cart
+                    </button>
                   </div>
                 </div>
-              ))}
-            </div>
-          </Card.Body>
-        </Card>
-      ))}
-    </Container>
+              </Col>
+            ))
+          )}
+        </Row>
+      </Container>
+    </section>
   );
 };
 

@@ -1,22 +1,26 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { useCart } from '../Cart/cartContext';  
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import { useCart } from "../Cart/cartContext";
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useCart();  
+  const { cartItems, removeFromCart } = useCart();
 
   return (
     <section className="cart_page" id="cart">
       <Container>
         <Row className="pt-50">
           <Col lg={{ span: 8, offset: 2 }} className="text-center my-5">
-            <h2>Your <span className='cart-head-red'>Cart</span></h2>
+            <h2>
+              Your <span className="cart-head-red">Cart</span>
+            </h2>
           </Col>
         </Row>
         <Row>
           {cartItems.length === 0 ? (
             <Col className="text-center">
-              <h1 className='py-5'><span className='cart-head-red'>Your cart is empty!</span></h1>
+              <h1 className="py-5">
+                <span className="cart-head-red">Your cart is empty!</span>
+              </h1>
             </Col>
           ) : (
             cartItems.map((item) => (
